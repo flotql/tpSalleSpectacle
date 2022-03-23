@@ -8,7 +8,7 @@ class TypeOfEvents(models.Model):
 
 class Artists(models.Model):
     artist_name = models.CharField(max_length=30)
-    artist_firstname = models.CharField(max_length=30)
+    artist_firstname = models.CharField(max_length=30, blank=True, null=True)
 
 class WhoIsHere(models.Model):
     who_is_here_name = models.CharField(max_length=30)
