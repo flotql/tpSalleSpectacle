@@ -20,7 +20,8 @@
         <ul>
             {% for event in event_list %}
                 <li>
-                    <a href="{%url 'reservation:the_event'event.id %}">{{event.event_name}}</a>
+                    <a href="{% url 'reservation:the_event' event.id %}">{{events.event_name}}</a>
+
                 </li>
             {%endfor%}
         </ul>
