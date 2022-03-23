@@ -13,6 +13,9 @@ class Artists(models.Model):
 class WhoIsHere(models.Model):
     who_is_here_name = models.CharField(max_length=30)
     have = models.ManyToManyField(Artists)
+    
+    def __str__(self):
+        return who_is_here_name
 
 class Schedule(models.Model):
     start_date = models.DateTimeField('date de début')

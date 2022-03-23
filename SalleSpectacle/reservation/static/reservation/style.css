@@ -34,14 +34,14 @@ li a {
 
 .maNav {
   width: 150px;
-  background-color: #AF8D84;
-  border: solid 1px #AF8D84;
+  background-color: #e39a5a;
+  border: solid 1px #e39a5a;
   border-radius:5px;
   text-align:center;
   padding:10px;
 }
 
 .maNav:hover {
-  background-color:#504145;
+  background-color:#4a3638;
   border: solid 1px #AF8D84;
 }
