@@ -7,5 +7,10 @@ urlpatterns= [
     path('', views.index, name='index'),
     path('<int:event_id>/', views.the_event, name='the_event'),
     path('<int:event_id>/purchase', views.ticket_purchase, name='purchase'),
-    path('profil/', views.profil, name='profil')
+    path('profil/', views.profil, name='profil'),
+    path('login/', views.my_login, name='login'),
+    path('register/', views.register, name='register'),
+    path('logout/', views.my_logout, name='logout'),
+    path ('registered/', views.registered, name='registered'),
+    path ('welcome/', views.welcome, name='welcome'),
 ]
