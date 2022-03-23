@@ -21,7 +21,7 @@ def the_event(request, event_id):
     event = get_object_or_404(Events, pk=event_id)
     return render(request, 'reservation/the_event.html', {'event':event})
 
-def ticket_purchase(request):
+def ticket_purchase(request, event_id):
     return HttpResponse("Mes billets")
 
 

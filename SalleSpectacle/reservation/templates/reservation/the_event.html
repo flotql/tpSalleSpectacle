@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+{% extends "reservation/index.html" %}
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,10 +15,14 @@
 <ul class="event">
 
     <li id="event">Date de début: {{event.event_start_date}}</li>
-    <li id="events">Performé par: {{event.perform.who_is_here_name}}</li>
+    {% for perform in event.perform.all %}
+        <li id="events">Performé par: {{perform}}</li>
+    {% endfor %}
 
 </ul>
-<input type="button" value="Réserver">
+<form id="event_button" action="{% url 'reservation:purchase' event.id %}">
+<input type="submit" value="Réserver">
+</form>
 
 {%endblock%}
 
