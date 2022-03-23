@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'reservation/style.css' %}">
+    <title>Profil</title>
+</head>
+<body>
+{% block content %}
+    {% for user_list in event %}
+        <ul>
+            <li>
+                <a href="{% url 'reservation:cancel' user_list.id %}">{{user_list.event_name}}</a>
+            </li>
+        </ul>
+    {% endfor %}
+{% endblock %}
+</body>
+</html>
