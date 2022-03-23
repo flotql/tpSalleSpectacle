@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<body>
+    <form id="login" method="post" action="{% url 'reservation:welcome' %}">
+    {% csrf_token %}
+    <tr>
+        <td>
+            <label for="username">Login</label>
+            <input id="username" name="username">
+        </td>
+        <td>
+            <label for="password">Mot de passe</label>
+            <input id="password" name="password">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="submit" value="Connexion">
+            <input type="hidden" name="next" value="{{ next }}">
+        </td>
+    </tr>
+</form>
+</body>
+</html>

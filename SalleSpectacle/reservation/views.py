@@ -25,3 +25,36 @@ def ticket_purchase(request, event_id):
     return HttpResponse("Mes billets")
 
 
+# Vues pour l'inscription /le login/ et le logout d'un utilisateur
+def my_login(request):
+    return render(request, 'reservation/login.html')
+
+def register(request):
+    return render(request, 'reservation/register.html')
+
+def my_logout(request):
+    logout(request)
+    return render(request, 'reservation/logout.html')
+
+def registered(request):
+    name = request.POST['user_name']
+    firstname = request.POST['user_firstname']
+    pwd = request.POST['user_pwd']
+    email = request.POST['user_email']
+    username = firstname[0].lower() + "." + name.lower()
+    user = User.objects.create_user(username, email, pwd)
+    context = {'user':user}
+    return render(request, 'reservation/registered.html', context)
+
+def welcome(request):
+    username = request.POST['username']
+    password = request.POST['password']
+    user = authenticate(request, username=username, password=password)
+    context = {'user':user}
+    if user is not None:
+        login(request, user)
+        return render(request, 'reservation/welcome.html', context)
+    else :
+        return render(request, 'reservation/error_log.html')
+
+
