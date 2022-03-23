@@ -18,6 +18,6 @@ def index(request):
 def the_event(request):
     return render("Les concerts")
 
-def ticket_purhcase(request):
+def ticket_purchase(request):
     return HttpResponse("Mes billets")
 
