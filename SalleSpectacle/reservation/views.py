@@ -25,4 +25,13 @@ def ticket_purchase(request, event_id):
     return HttpResponse("Mes billets")
 
 def profil(request):
-    return render(request, 'reservation/profil.html')
+    pass
+    # asso = Events.book.objects.
+    # return render(request, 'reservation/profil.html')
+
+def cancel(request,event_id):
+    event = Events.objects.get(pk=event_id)
+    asso = event.book.get(request, username='user_id')
+    asso.delete()
+    context = {'event':event }
+    return render(request, 'reservation/cancel.html', context)
