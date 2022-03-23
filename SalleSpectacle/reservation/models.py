@@ -8,14 +8,16 @@ class TypeOfEvents(models.Model):
 
 class Artists(models.Model):
     artist_name = models.CharField(max_length=30)
-    artist_firstname = models.CharField(max_length=30, blank=True, null=True)
+    artist_firstname = models.CharField(max_length=30)
 
 class WhoIsHere(models.Model):
     who_is_here_name = models.CharField(max_length=30)
     have = models.ManyToManyField(Artists)
+
     
     def __str__(self):
         return self.who_is_here_name
+
 
 class Schedule(models.Model):
     start_date = models.DateTimeField('date de début')
@@ -29,9 +31,9 @@ class Events(models.Model):
     event_start_date = models.DateTimeField('date de début')
     event_end_date = models.DateTimeField('date de fin')
     type_of_event = models.ForeignKey(TypeOfEvents, on_delete=models.CASCADE)
-    book = models.ManyToManyField(User, blank=True)
+    book = models.ManyToManyField(User)
     perform = models.ManyToManyField(WhoIsHere)
-    prepare = models.ManyToManyField(Schedule, blank=True)
+    prepare = models.ManyToManyField(Schedule)
 
 class Showroom(models.Model):
     showroom_name = models.CharField(max_length=30)

@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-{% extends "reservation/index.html" %}
-{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>TheEvent</title>
 </head>
 <body>
+
 {% block content%}
 
 <h1>L'évenement: {{event.events_name}}</h1>
@@ -16,6 +15,7 @@
     <li class="event1">Performé par: {{event.perfom}}</li>
 </ul>
 <input type="button" value="Réserver">
+
 
 
 </body>
