@@ -15,7 +15,7 @@ class WhoIsHere(models.Model):
     have = models.ManyToManyField(Artists)
     
     def __str__(self):
-        return who_is_here_name
+        return self.who_is_here_name
 
 class Schedule(models.Model):
     start_date = models.DateTimeField('date de début')
