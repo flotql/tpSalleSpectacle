@@ -25,13 +25,17 @@ def ticket_purchase(request, event_id):
     return HttpResponse("Mes billets")
 
 def profil(request):
-    pass
-    # asso = Events.book.objects.
-    # return render(request, 'reservation/profil.html')
+    event = []
+    for list_event in Events.objects.all():
+        for user_list in list_event.book.all():
+            if user_list == request.user:
+                event.append(user_list)
+    context = {'event':event}
+    return render(request, 'reservation/profil.html', context)
 
 def cancel(request,event_id):
     event = Events.objects.get(pk=event_id)
-    asso = event.book.get(request, username='user_id')
+    asso = event.book.get(username= request.user.username)
     asso.delete()
     context = {'event':event }
     return render(request, 'reservation/cancel.html', context)
@@ -58,7 +62,7 @@ def registered(request):
     return render(request, 'reservation/registered.html', context)
 
 def welcome(request):
-    username = request.POST['user_name']
+    username = request.POST['username']
     password = request.POST['password']
     user = authenticate(request, username=username, password=password)
     context = {'user':user}
