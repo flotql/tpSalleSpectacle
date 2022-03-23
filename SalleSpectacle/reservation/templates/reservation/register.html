@@ -1,11 +1,14 @@
 
 <!DOCTYPE html>
+{% extends "reservation/index.html" %}
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>register</title>
 </head>
 <body>
+{% block content %}
 <form id="register" action="{% url 'reservation:registered' %}" method="post">
     {% csrf_token %}
     <tr>
@@ -29,6 +32,6 @@
             <input type="submit" value="Enregistrer">
         </td></tr>
 </form>
-
+{% endblock %}
 </body>
 </html>
