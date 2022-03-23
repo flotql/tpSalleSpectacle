@@ -1,0 +1,47 @@
+:root {
+--primary-color: #504145;
+}
+
+body {
+background-color: white;
+background-image: url('https://images2.imgbox.com/c4/a8/OvlEKNkf_o.jpg');
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+height:100vh;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li a {
+  text-decoration:none;
+  color: #eaca00
+;
+}
+
+/*ma barre de navigation*/
+.nav {
+  display: flex;
+  flex-direction: rows;
+  justify-content: space-evenly;
+  font-family: impact;
+  margin-bottom: 50px;
+  letter-spacing: 2px;
+  font-size: 25px;
+}
+
+.maNav {
+  width: 150px;
+  background-color: #AF8D84;
+  border: solid 1px #AF8D84;
+  border-radius:5px;
+  text-align:center;
+  padding:10px;
+}
+
+.maNav:hover {
+  background-color:#504145;
+  border: solid 1px #AF8D84;
+}
