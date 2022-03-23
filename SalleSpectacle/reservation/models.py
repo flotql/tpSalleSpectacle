@@ -6,9 +6,15 @@ from django.contrib.auth.models import User
 class TypeOfEvents(models.Model):
     type_of_event_name = models.CharField(max_length=50)
 
+    def __str__(self):
+        return self.type_of_event_name
+
 class Artists(models.Model):
     artist_name = models.CharField(max_length=30)
     artist_firstname = models.CharField(max_length=30, blank=True, null=True)
+
+    def __str__(self):
+        return self.artist_name
 
 class WhoIsHere(models.Model):
     who_is_here_name = models.CharField(max_length=30)
@@ -25,6 +31,9 @@ class Schedule(models.Model):
 class TyOfShowroom(models.Model):
     type_of_showroom_name = models.CharField(max_length=50)
 
+    def __str__(self):
+        return self.type_of_showroom_name
+
 class Events(models.Model):
     event_name = models.CharField(max_length=50)
     event_start_date = models.DateTimeField('date de début')
@@ -34,8 +43,14 @@ class Events(models.Model):
     perform = models.ManyToManyField(WhoIsHere)
     prepare = models.ManyToManyField(Schedule, blank=True)
 
+    def __str__(self):
+        return self.event_name
+
 class Showroom(models.Model):
     showroom_name = models.CharField(max_length=30)
     showroom_places = models.IntegerField(default=0)
-    events = models.ForeignKey(Events, on_delete=models.CASCADE)
-    tyofshowroom = models.ForeignKey(TyOfShowroom, on_delete=models.CASCADE)
+    events = models.ForeignKey(Events, blank=True, null=True, on_delete=models.CASCADE)
+    tyofshowroom = models.ForeignKey(TyOfShowroom, blank=True, null=True, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.showroom_name
