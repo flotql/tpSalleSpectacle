@@ -35,7 +35,6 @@ def cancel(request,event_id):
     asso.delete()
     context = {'event':event }
     return render(request, 'reservation/cancel.html', context)
-    return render(request, 'reservation/profil.html')
 
 # Vues pour l'inscription /le login/ et le logout d'un utilisateur
 def my_login(request):
