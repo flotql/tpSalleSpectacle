@@ -4,31 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <title>Index</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'reservation/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'reservation/nav.css' %}">
+    {% block css_maybe %}
+    <link rel="stylesheet" type="text/css" href="{%static 'reservation/style.css' %}">
+    {% endblock %}
 </head>
 <body>
-<ul class="nav">
-  <li class="maNav"><a href="default.asp">Home</a></li>
-  <li class="maNav"><a href="news.asp">The Events</a></li>
-  <li class="maNav"><a href="contact.asp">Contact</a></li>
-  <li class="maNav"><a href="about.asp">About</a></li>
-</ul>
+
+<nav class="nav">
+    <a href="{% url 'reservation:index' %}">Home</a>
+    <a href="#">Profil</a>
+    <a href="contact.asp">Contact</a>
+    <a href="about.asp">About</a>
+    <div class="dot"></div>
+</nav>
 
 {% block content %}
+<div class="maBox">
+    <div class="index_title">Bienvenue aux Guinguettes !</div>
 
     {%if event_list%}
+    <div class="index_list">
         <ul>
             {% for event in event_list %}
                 <li>
-                    <a href="{% url 'reservation:the_event' event.id %}">{{event.event_name}}</a>
+                    <pre><a href="{% url 'reservation:the_event' event.id %}">{{event.event_start_date}}; {{event.event_name}}</a></pre>
 
                 </li>
             {%endfor%}
         </ul>
+    </div>
     {%else%}
         <p>Pas d'évenement à venir !</p>
     {%endif%}
-
+</div>
 {% endblock %}
 
 </body>
