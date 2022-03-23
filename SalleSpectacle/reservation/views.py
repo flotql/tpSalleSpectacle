@@ -24,4 +24,5 @@ def the_event(request, event_id):
 def ticket_purchase(request, event_id):
     return HttpResponse("Mes billets")
 
-
+def profil(request):
+    return render(request, 'reservation/profil.html')
