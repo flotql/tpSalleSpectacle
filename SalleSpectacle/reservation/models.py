@@ -26,9 +26,9 @@ class Events(models.Model):
     event_start_date = models.DateTimeField('date de début')
     event_end_date = models.DateTimeField('date de fin')
     type_of_event = models.ForeignKey(TypeOfEvents, on_delete=models.CASCADE)
-    book = models.ManyToManyField(User)
+    book = models.ManyToManyField(User, blank=True)
     perform = models.ManyToManyField(WhoIsHere)
-    prepare = models.ManyToManyField(Schedule)
+    prepare = models.ManyToManyField(Schedule, blank=True)
 
 class Showroom(models.Model):
     showroom_name = models.CharField(max_length=30)
