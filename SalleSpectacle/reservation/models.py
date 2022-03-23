@@ -14,7 +14,6 @@ class WhoIsHere(models.Model):
     who_is_here_name = models.CharField(max_length=30)
     have = models.ManyToManyField(Artists)
 
-    
     def __str__(self):
         return self.who_is_here_name
 
