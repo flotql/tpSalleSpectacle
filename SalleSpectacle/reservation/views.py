@@ -23,8 +23,8 @@ def the_event(request, event_id):
 
 def ticket_purchase(request, event_id):
     event = Events.objects.get(pk=event_id)
-    asso = event.book.get(username= request.user.username)
-    asso.save()
+    event.book.add(request.user)
+    event.save()
     context = {'event':event }
     return render(request, 'reservation/purchase.html', context)
 
