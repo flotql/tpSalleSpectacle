@@ -7,10 +7,11 @@
     <title>Registered</title>
 </head>
 <body>
-<body>
+{% block content%}
     <h1>Bienvenue !</h1>
     <p>Votre nom d'utilisateur est {{ user.username }}</p>
 
     <a href="{% url 'reservation:login' %}">Login</a>
+{% endblock %}
 </body>
 </html>

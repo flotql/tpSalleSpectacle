@@ -8,24 +8,26 @@
 </head>
 <body>
 <body>
+    {% block content%}
     <form id="login" method="post" action="{% url 'reservation:welcome' %}">
     {% csrf_token %}
-    <tr>
-        <td>
-            <label for="user_name">Login</label>
-            <input id="user_name" name="user_name">
-        </td>
-        <td>
-            <label for="password">Mot de passe</label>
-            <input id="password" name="password">
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <input type="submit" value="Connexion">
-            <input type="hidden" name="next" value="{{ next }}">
-        </td>
-    </tr>
-</form>
+        <tr>
+            <td>
+                <label for="user_name">Login</label>
+                <input id="user_name" name="user_name">
+            </td>
+            <td>
+                <label for="password">Mot de passe</label>
+                <input id="password" name="password">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Connexion">
+                <input type="hidden" name="next" value="{{ next }}">
+            </td>
+        </tr>
+    </form>
+    {% endblock %}
 </body>
 </html>

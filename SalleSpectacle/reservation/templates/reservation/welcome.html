@@ -6,9 +6,11 @@
     <meta charset="UTF-8">
     <title>welcome</title>
 </head>
+{% block content%}
 <body>
     <h1>Bienvenue {{user.username}} !</h1>
-  <p>Connexion réussi</p>
-  <a href="{% url 'reservation:index' %}">Page d'accueil</a>
+    <p>Connexion réussi</p>
+    <a href="{% url 'reservation:index' %}">Page d'accueil</a>
 </body>
+{% endblock %}
 </html>
