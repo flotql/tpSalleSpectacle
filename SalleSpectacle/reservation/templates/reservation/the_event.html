@@ -27,7 +27,11 @@
     {% if total > 0%}
     <li id="place">Nombre de places restantes : {{total}}</li>
     <form  action="{% url 'reservation:purchase' event.id %}">
+    {% if not request.user.is_authenticated %}
+    Connectez-vous pour prendre une place
+    {% else %}
     <input id="event_button" type="submit" value="Réserver">
+    {% endif %}
     </form>
     {%else%}
     <li id="Complet">Complet</li>
