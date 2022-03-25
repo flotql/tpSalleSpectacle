@@ -1,45 +1,32 @@
-
-<!DOCTYPE html>
 {% extends "reservation/index.html" %}
 {% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>register</title>
+    {% block css_maybe %}
+    <link rel="stylesheet" type="text/css" href="{% static 'reservation/nav.css' %}">
+    <link rel="stylesheet" type="text/css" href="{%static 'reservation/style.css' %}">
     <link rel="stylesheet" type="text/css" href="{%static 'reservation/monForm.css' %}">
-</head>
-<body>
+    {% endblock %}
 {% block content %}
-<div class="monForm">
+<div class="signIn">
 <form id="register" action="{% url 'reservation:registered' %}" method="post">
+
+        <h2>Inscription</h2>
     {% csrf_token %}
 
             <div class="monInput">
                 <label for="user_name">Nom</label>
                 <input id="user_name" name="user_name">
-            </div>
-
-            <div class="monInput">
                 <label for="user_firstname">Prénom</label>
                 <input id="user_firstname" name="user_firstname">
-            </div>
-
-            <div class="monInput">
                 <label for="user_email">Email</label>
                 <input id="user_email" name="user_email">
-            </div>
-
-            <div class="monInput">
                 <label for="user_pwd">Mot de passe</label>
                 <input type="password" id="user_pwd" name="user_pwd">
             </div>
+                <a href="#">
+                Enregistrer
+                </a>
 
-            <div class="monInput">
-                <input type="submit" value="Enregistrer">
-            </div>
 
 </form>
 </div>
 {% endblock %}
-</body>
-</html>

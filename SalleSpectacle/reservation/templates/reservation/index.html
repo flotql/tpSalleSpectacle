@@ -7,10 +7,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{% static 'reservation/nav.css' %}">
     {% block css_maybe %}
+    <link rel="stylesheet" type="text/css" href="{% static 'reservation/nav.css' %}">
     <link rel="stylesheet" type="text/css" href="{%static 'reservation/style.css' %}">
     {% endblock %}
+
 </head>
 <body>
 
@@ -22,8 +23,9 @@
     {% else %}
         <a href="{% url 'reservation:profil' %}">Profil</a>
         <a href="{% url 'reservation:logout' %}">Déconnexion</a>
-    <div class="dot"></div>
+
     {% endif %}
+    <div class="dot"></div>
 </nav>
 
 {% block content %}
