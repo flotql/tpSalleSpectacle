@@ -26,13 +26,14 @@
 
     {% if total > 0%}
     <li id="place">Nombre de places restantes : {{total}}</li>
+    <form  action="{% url 'reservation:purchase' event.id %}">
+    <input id="event_button" type="submit" value="Réserver">
+    </form>
     {%else%}
     <li id="Complet">Complet</li>
-
+    {%endif%}
 </ul>
-<form  action="{% url 'reservation:purchase' event.id %}">
-<input id="event_button" type="submit" value="Réserver">
-</form>
+
 
 </div>
 {%endblock%}
