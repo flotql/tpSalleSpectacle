@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9da38dab-9815-4f33-ae83-c13767949aba" name="Changes" comment="update my things">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservation/templates/reservation/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/templates/reservation/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reservation/templates/reservation/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/templates/reservation/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reservation/templates/reservation/profil.html" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/templates/reservation/profil.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reservation/templates/reservation/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/templates/reservation/register.html" afterDir="false" />
