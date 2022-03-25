@@ -18,7 +18,11 @@
     {% for perform in event.perform.all %}
         <li id="events">Performé par: {{perform}}</li>
     {% endfor %}
-    <li id="nbrseats">Places restantes : {{showroom.showroom_places}}</li>
+
+    {% if total > 0%}
+    <li id="place">Nombre de places restantes : {{total}}</li>
+    {%else%}
+    <li id="Complet">Complet</li>
 
 </ul>
 <form id="event_button" action="{% url 'reservation:purchase' event.id %}">

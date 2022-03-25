@@ -19,11 +19,18 @@ def index(request):
 
 def the_event(request, event_id):
     event = get_object_or_404(Events, pk=event_id)
-    return render(request, 'reservation/the_event.html', {'event':event})
+    places = event.take.all()
+    total = 0
+    for i in places:
+        total += i.showroom_places
+    total -= event.sold_places
+    # total = sum([i.showroom_places for i in places]) - event.sold_places
+    return render(request, 'reservation/the_event.html', {'event':event, 'total':total})
 
 def ticket_purchase(request, event_id):
     event = Events.objects.get(pk=event_id)
     event.book.add(request.user)
+    event.sold_places +=1
     event.save()
     context = {'event':event }
     return render(request, 'reservation/purchase.html', context)
