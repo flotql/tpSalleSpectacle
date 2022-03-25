@@ -29,20 +29,17 @@ def ticket_purchase(request, event_id):
     return render(request, 'reservation/purchase.html', context)
 
 def profil(request):
-    event = []
     nomEvent = []
     for list_event in Events.objects.all():
         for user_list in list_event.book.all():
             if user_list == request.user:
-                nomEvent.append(list_event.event_name)
-                event.append(user_list)
-    context = {'event':event,'nomEvent':nomEvent}
+                nomEvent.append(list_event)
+    context = {'nomEvent':nomEvent}
     return render(request, 'reservation/profil.html', context)
 
 def cancel(request,event_id):
     event = Events.objects.get(pk=event_id)
-    asso = event.book.get(username= request.user.username)
-    asso.delete()
+    event.book.remove(request.user)
     context = {'event':event }
     return render(request, 'reservation/cancel.html', context)
 
