@@ -34,6 +34,14 @@ class TyOfShowroom(models.Model):
     def __str__(self):
         return self.type_of_showroom_name
 
+class Showroom(models.Model):
+    showroom_name = models.CharField(max_length=30)
+    showroom_places = models.IntegerField(default=0)
+    tyofshowroom = models.ForeignKey(TyOfShowroom, blank=True, null=True, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.showroom_name
+
 class Events(models.Model):
     event_name = models.CharField(max_length=50)
     event_start_date = models.DateTimeField('date de début')
@@ -42,6 +50,7 @@ class Events(models.Model):
     book = models.ManyToManyField(User, blank=True)
     perform = models.ManyToManyField(WhoIsHere)
     prepare = models.ManyToManyField(Schedule, blank=True)
+    take = models.ManyToManyField(Showroom, blank=True)
 
     def __str__(self):
         return self.event_name

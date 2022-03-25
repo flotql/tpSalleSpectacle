@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>purchase</title>
+</head>
+<body>
+{% block content%}
+<div><h1>La réservation est bien prise en compte </h1></div>
+    <div>
+        <a href="{% url 'reservation:profil' %}">Retour sur le profil</a>
+        <a href="{% url 'reservation:index' %}">Retour à l'index</a>
+
+    </div>
+</body>
+{% endblock %}
+</html>
