@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% extends "reservation/index.html" %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail</title>
+</head>
+<body>
+{% block content%}
+    <h1>L'évenement: {{event.event_name}}</h1>
+    <ul class="event">
+        <li id="event">Date de début: {{event.event_start_date}}</li>
+        {% for perform in event.perform.all %}
+        <li id="events">Performé par: {{perform}}</li>
+        {% endfor %}
+    </ul>
+    <img src="{% static 'sondage/img/ticket.png' %}">
+    <a href="{% url 'reservation:cancel' event.id %}">Annulation de la réservation</a>
+{%endblock%}
+</body>
+</html>
