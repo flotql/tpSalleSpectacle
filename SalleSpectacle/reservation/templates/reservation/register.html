@@ -6,32 +6,40 @@
 <head>
     <meta charset="UTF-8">
     <title>register</title>
+    <link rel="stylesheet" type="text/css" href="{%static 'reservation/monForm.css' %}">
 </head>
 <body>
 {% block content %}
+<div class="monForm">
 <form id="register" action="{% url 'reservation:registered' %}" method="post">
     {% csrf_token %}
-    <tr>
-        <tr><td>
-            <label for="user_name">Nom</label>
-            <input id="user_name" name="user_name">
-        </td></tr>
-        <tr><td>
-            <label for="user_firstname">Prénom</label>
-            <input id="user_firstname" name="user_firstname">
-        </td></tr>
-        <tr><td>
-            <label for="user_email">Email</label>
-            <input id="user_email" name="user_email">
-        </td></tr>
-        <tr><td>
-            <label for="user_pwd">Mot de passe</label>
-            <input id="user_pwd" name="user_pwd">
-        </td></tr>
-        <tr><td>
-            <input type="submit" value="Enregistrer">
-        </td></tr>
+
+            <div class="monInput">
+                <label for="user_name">Nom</label>
+                <input id="user_name" name="user_name">
+            </div>
+
+            <div class="monInput">
+                <label for="user_firstname">Prénom</label>
+                <input id="user_firstname" name="user_firstname">
+            </div>
+
+            <div class="monInput">
+                <label for="user_email">Email</label>
+                <input id="user_email" name="user_email">
+            </div>
+
+            <div class="monInput">
+                <label for="user_pwd">Mot de passe</label>
+                <input type="password" id="user_pwd" name="user_pwd">
+            </div>
+
+            <div class="monInput">
+                <input type="submit" value="Enregistrer">
+            </div>
+
 </form>
+</div>
 {% endblock %}
 </body>
 </html>
