@@ -1,16 +1,18 @@
-<!DOCTYPE html>
 {% extends "reservation/index.html" %}
 {% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>welcome</title>
-</head>
+    {% block css_maybe %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bahianita&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'reservation/nav.css' %}">
+    <link rel="stylesheet" type="text/css" href="{%static 'reservation/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{%static 'reservation/monForm.css' %}">
+    <link rel="stylesheet" type="text/css" href="{%static 'reservation/welcome.css' %}">
+    {% endblock %}
 {% block content%}
-<body>
+<div class="welcome">
     <h1>Bienvenue {{user.username}} !</h1>
-    <p>Connexion réussi</p>
-    <a href="{% url 'reservation:index' %}">Page d'accueil</a>
-</body>
+    <p>Baladez-vous sur notre site !</br>
+        <a href="{% url 'reservation:index' %}">➔ Page d'accueil</a></p>
+</div>
 {% endblock %}
-</html>
