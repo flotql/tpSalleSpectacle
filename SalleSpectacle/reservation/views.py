@@ -51,6 +51,8 @@ def detail(request,event_id):
 def cancel(request,event_id):
     event = Events.objects.get(pk=event_id)
     event.book.remove(request.user)
+    event.sold_places -=1
+    event.save()
     context = {'event':event }
     return render(request, 'reservation/cancel.html', context)
 

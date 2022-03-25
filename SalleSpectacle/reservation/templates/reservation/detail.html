@@ -1,12 +1,17 @@
 {% extends "reservation/index.html" %}
 {% load static %}
     {% block css_maybe %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bahianita&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'reservation/nav.css' %}">
     <link rel="stylesheet" type="text/css" href="{%static 'reservation/style.css' %}">
     <link rel="stylesheet" type="text/css" href="{%static 'reservation/monDetail.css' %}">
     {% endblock %}
     <title>Detail</title>
 {% block content%}
+<div id="laDiv">
+    <div id="petiteDiv">
     <h1>L'évenement: {{event.event_name}}</h1>
     <ul class="event">
         <li id="event">Date de début: {{event.event_start_date}}</li>
@@ -14,7 +19,9 @@
         <li id="events">Performé par: {{perform}}</li>
         {% endfor %}
     </ul>
-    <img src="{% static 'reservation/ticket.png' %}">
-    <a href="{% url 'reservation:cancel' event.id %}">Annulation de la réservation</a>
+    <div id="imgDiv"><img src="{% static 'reservation/ticket.png' %}"></div>
+    <a href="{% url 'reservation:cancel' event.id %}"><button>Annulation de la réservation</button></a>
+    </div>
+</div>
 {%endblock%}
 
