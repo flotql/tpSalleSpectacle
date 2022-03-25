@@ -55,11 +55,3 @@ class Events(models.Model):
     def __str__(self):
         return self.event_name
 
-class Showroom(models.Model):
-    showroom_name = models.CharField(max_length=30)
-    showroom_places = models.IntegerField(default=0)
-    events = models.ForeignKey(Events, blank=True, null=True, on_delete=models.CASCADE)
-    tyofshowroom = models.ForeignKey(TyOfShowroom, blank=True, null=True, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.showroom_name
