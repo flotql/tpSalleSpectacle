@@ -26,7 +26,7 @@ def ticket_purchase(request, event_id):
     asso = event.book.get(username= request.user.username)
     asso.save()
     context = {'event':event }
-    pass
+    return render(request, 'reservation/purchase.html', context)
 
 def profil(request):
     event = []
