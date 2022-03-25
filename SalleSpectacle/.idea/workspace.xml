@@ -3,12 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="9da38dab-9815-4f33-ae83-c13767949aba" name="Changes" comment="update my things">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SalleSpectacle/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/SalleSpectacle/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservation/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reservation/static/reservation/monForm.css" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/static/reservation/monForm.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reservation/static/reservation/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/static/reservation/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reservation/templates/reservation/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/templates/reservation/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/templates/reservation/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/templates/reservation/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reservation/templates/reservation/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/templates/reservation/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/templates/reservation/the_event.html" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/templates/reservation/the_event.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

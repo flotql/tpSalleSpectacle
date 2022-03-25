@@ -13,17 +13,25 @@
     {% csrf_token %}
 
             <div class="monInput">
-                <label for="user_name">Nom</label>
-                <input id="user_name" name="user_name">
-                <label for="user_firstname">Prénom</label>
-                <input id="user_firstname" name="user_firstname">
-                <label for="user_email">Email</label>
-                <input id="user_email" name="user_email">
-                <label for="user_pwd">Mot de passe</label>
-                <input type="password" id="user_pwd" name="user_pwd">
+
+                <input id="user_name" name="user_name" placeholder="Nom">
+                <label for="user_name"></label>
+
+                <input id="user_firstname" name="user_firstname" placeholder="Prénom">
+                <label for="user_firstname"></label>
+
+                <input id="user_email" name="user_email" placeholder="E-mail">
+                <label for="user_email"></label>
+
+                <input type="password" id="user_pwd" name="user_pwd" placeholder="Mot de passe">
+                <label for="user_pwd"></label>
             </div>
-                <a href="#">
-                Enregistrer
+                <a href="{% url 'reservation:registered' %}"><input class="jeTeste" type="submit" value="Enregistrer">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
                 </a>
 
 
