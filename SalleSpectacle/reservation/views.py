@@ -19,11 +19,18 @@ def index(request):
 
 def the_event(request, event_id):
     event = get_object_or_404(Events, pk=event_id)
-    return render(request, 'reservation/the_event.html', {'event':event})
+    places = event.take.all()
+    total = 0
+    for i in places:
+        total += i.showroom_places
+    total -= event.sold_places
+    # total = sum([i.showroom_places for i in places]) - event.sold_places
+    return render(request, 'reservation/the_event.html', {'event':event, 'total':total})
 
 def ticket_purchase(request, event_id):
     event = Events.objects.get(pk=event_id)
     event.book.add(request.user)
+    event.sold_places +=1
     event.save()
     context = {'event':event }
     return render(request, 'reservation/purchase.html', context)
@@ -37,32 +44,18 @@ def profil(request):
     context = {'nomEvent':nomEvent}
     return render(request, 'reservation/profil.html', context)
 
+def detail(request,event_id):
+    event = get_object_or_404(Events, pk=event_id)
+    return render(request, 'reservation/detail.html', {'event':event})
+
 def cancel(request,event_id):
     event = Events.objects.get(pk=event_id)
     event.book.remove(request.user)
     context = {'event':event }
     return render(request, 'reservation/cancel.html', context)
 
-# Vues pour l'inscription /le login/ et le logout d'un utilisateur
 def my_login(request):
     return render(request, 'reservation/login.html')
-
-def register(request):
-    return render(request, 'reservation/register.html')
-
-def my_logout(request):
-    logout(request)
-    return render(request, 'reservation/logout.html')
-
-def registered(request):
-    name = request.POST['user_name']
-    firstname = request.POST['user_firstname']
-    pwd = request.POST['user_pwd']
-    email = request.POST['user_email']
-    username = firstname[0].lower() + "." + name.lower()
-    user = User.objects.create_user(username, email, pwd)
-    context = {'user':user}
-    return render(request, 'reservation/registered.html', context)
 
 def welcome(request):
     username = request.POST['user_name']
@@ -74,5 +67,23 @@ def welcome(request):
         return render(request, 'reservation/welcome.html', context)
     else :
         return render(request, 'reservation/error_log.html')
+
+def my_logout(request):
+    logout(request)
+    return render(request, 'reservation/logout.html')
+
+def register(request):
+    return render(request, 'reservation/register.html')
+
+def registered(request):
+    name = request.POST['user_name']
+    firstname = request.POST['user_firstname']
+    pwd = request.POST['user_pwd']
+    email = request.POST['user_email']
+    username = firstname[0].lower() + "." + name.lower()
+    user = User.objects.create_user(username, email, pwd)
+    context = {'user':user}
+    return render(request, 'reservation/registered.html', context)
+
 
 

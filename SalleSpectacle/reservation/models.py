@@ -46,6 +46,7 @@ class Events(models.Model):
     event_name = models.CharField(max_length=50)
     event_start_date = models.DateTimeField('date de début')
     event_end_date = models.DateTimeField('date de fin')
+    sold_places = models.IntegerField(default=0)
     type_of_event = models.ForeignKey(TypeOfEvents, on_delete=models.CASCADE)
     book = models.ManyToManyField(User, blank=True)
     perform = models.ManyToManyField(WhoIsHere)
@@ -54,6 +55,4 @@ class Events(models.Model):
 
     def __str__(self):
         return self.event_name
-
-
 

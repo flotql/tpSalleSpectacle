@@ -12,7 +12,7 @@
     {% for event_list in nomEvent %}
         <ul>
             <li>
-                <a href="{% url 'reservation:cancel' event_list.id %}">{{event_list.event_name}}</a>
+                <a href="{% url 'reservation:detail' event_list.id %}">{{event_list.event_name}}</a>
             </li>
         </ul>
     {% endfor %}

@@ -1,0 +1,20 @@
+{% extends "reservation/index.html" %}
+{% load static %}
+    {% block css_maybe %}
+    <link rel="stylesheet" type="text/css" href="{% static 'reservation/nav.css' %}">
+    <link rel="stylesheet" type="text/css" href="{%static 'reservation/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{%static 'reservation/monDetail.css' %}">
+    {% endblock %}
+    <title>Detail</title>
+{% block content%}
+    <h1>L'évenement: {{event.event_name}}</h1>
+    <ul class="event">
+        <li id="event">Date de début: {{event.event_start_date}}</li>
+        {% for perform in event.perform.all %}
+        <li id="events">Performé par: {{perform}}</li>
+        {% endfor %}
+    </ul>
+    <img src="{% static 'reservation/ticket.png' %}">
+    <a href="{% url 'reservation:cancel' event.id %}">Annulation de la réservation</a>
+{%endblock%}
+
