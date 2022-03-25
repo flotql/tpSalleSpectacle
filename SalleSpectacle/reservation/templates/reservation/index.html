@@ -16,10 +16,14 @@
 
 <nav class="nav">
     <a href="{% url 'reservation:index' %}">Home</a>
-    <a href="{% url 'reservation:profil' %}">Profil</a>
-    <a href="{% url 'reservation:register' %}">S'inscrire</a>
-    <a href="about.asp">About</a>
+    {% if not request.user.is_authenticated %}
+        <a href="{% url 'reservation:register' %}">S'inscrire</a>
+        <a href="{% url 'reservation:login' %}">Connexion</a>
+    {% else %}
+        <a href="{% url 'reservation:profil' %}">Profil</a>
+        <a href="{% url 'reservation:logout' %}">Déconnexion</a>
     <div class="dot"></div>
+    {% endif %}
 </nav>
 
 {% block content %}
