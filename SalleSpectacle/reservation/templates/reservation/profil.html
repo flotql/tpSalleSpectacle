@@ -16,13 +16,15 @@
 
 <div class="monProfil1">
     <h2>Voici la liste de tes événements:</h2>
-    {% for event_list in nomEvent %}
+
         <ul>
+            {% for event_list in nomEvent %}
             <li>
                 <p>➔ <a href="{% url 'reservation:detail' event_list.id %}">{{event_list.event_name}}</a></p>
             </li>
+            {% endfor %}
         </ul>
 </div>
 </div>
-    {% endfor %}
+
 {% endblock %}
