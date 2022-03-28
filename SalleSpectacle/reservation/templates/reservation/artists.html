@@ -19,15 +19,17 @@
 <body>
 {% block content %}
 <div class="monEvent">
+    <h1>Les Artistes :</h1>
 
-    <h1>Les Artistes</h1>
     {% for artists_list in artist.have.all %}
-        <ul>
+        <ul class="event">
             <li>
                 {{artists_list.artist_name}} {{artists_list.artist_firstname}}
             </li>
         </ul>
     {% endfor %}
+        </div>
+    </div>
 </div>
 {% endblock %}
 </body>

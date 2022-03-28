@@ -11,21 +11,21 @@
     {% endblock %}
 
 {% block content%}
-
+{% load i18n %}
 <div class="monEvent">
 
     <h1>L'évenement: {{event.event_name}}</h1>
 
 <ul class="event">
-
-    <li class="events">Date de début: {{event.event_start_date}}</li>
+    {% language 'fr' %}
+    <li class="events">Date de début: {{event.event_start_date|date:'d F Y'}}</li>
+    {% endlanguage %}
     Performé par:
     {% for perform in event.perform.all %}
         <li class="events">
             <a href="{% url 'reservation:artists' perform.id %}">{{perform}}</a>
         </li>
     {% endfor %}
-
     {% if total > 0%}
     <li id="place">Nombre de places restantes : {{total}}</li>
     <form  action="{% url 'reservation:purchase' event.id %}">
