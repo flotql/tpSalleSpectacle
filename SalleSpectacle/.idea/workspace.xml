@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9da38dab-9815-4f33-ae83-c13767949aba" name="Changes" comment="update my things">
-      <change beforePath="$PROJECT_DIR$/reservation/templates/reservation/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/templates/reservation/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/static/reservation/profil.css" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/static/reservation/profil.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
