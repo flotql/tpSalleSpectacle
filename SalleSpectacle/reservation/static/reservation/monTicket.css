@@ -35,7 +35,7 @@
 .ticket-contain {
     display: flex;
     justify-content: center;
-}
+    }
 
 .dedans {
     font-weight: bold;
@@ -61,4 +61,8 @@
 
 .wrap {
 filter: drop-shadow(-5px 10px 8px black);
+}
+
+.ticket-p {
+padding:6px;
 }

@@ -18,11 +18,11 @@
        <div class="wrap"> <div class="monTicket">
         <div class="ticket">
             <div class="ticketHaut">
-                <p class="noselect">{{event.id}}</p>
+                <p class="noselect">{{rnd}}{{event.id}}{{request.user.id}}</p>
             </div>
             <div class="ticket-contain">
-                <div>
-                    <p class="dedans">{{event.event_name}}</p>
+                <div class="ticket-p">
+                    <p class="dedans">{{event.event_name}}</p></br>
                     <p class="enHaut">{{event.event_start_date}}</p>
                 </div>
             </div>

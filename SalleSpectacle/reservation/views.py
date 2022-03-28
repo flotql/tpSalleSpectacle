@@ -8,10 +8,13 @@ from django.urls import reverse
 from django.views import generic
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
+from random import randint
 
 
 # Create your views here.
-
+def rnd():
+    return randint(1000000, 10000000)
+    
 def index(request):
     latest_event_list = Events.objects.order_by('id')
     context = {'event_list': latest_event_list}
@@ -50,7 +53,8 @@ def profil(request):
 
 def detail(request,event_id):
     event = get_object_or_404(Events, pk=event_id)
-    return render(request, 'reservation/detail.html', {'event':event})
+    return render(request, 'reservation/detail.html', {'event':event, 'rnd':rnd()})
+
 
 def cancel(request,event_id):
     event = Events.objects.get(pk=event_id)
