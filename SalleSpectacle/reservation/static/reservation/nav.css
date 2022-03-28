@@ -27,13 +27,13 @@ transition: all 0.2s ease-in-out;
 }
 
 .nav a:hover {
-color: #fddb3a;
+color: indianred;
 }
 
 .nav .dot {
   width: 6px;
   height: 6px;
-  background: #fddb3a;
+  background: indianred;
   border-radius: 50%;
   opacity: 0;
   -webkit-transform: translateX(30px);

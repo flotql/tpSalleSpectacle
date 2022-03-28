@@ -15,7 +15,7 @@
 <div id="laDiv">
     <div id="petiteDiv">
         <h1>L'évenement: {{event.event_name}}</h1>
-        <div class="monTicket">
+       <div class="wrap"> <div class="monTicket">
         <div class="ticket">
             <div class="ticketHaut">
                 <p class="noselect">{{event.id}}</p>
@@ -27,6 +27,7 @@
                 </div>
             </div>
         </div>
+       </div>
         </div>
         <div>
             <a href="{% url 'reservation:cancel' event.id %}"><button id="annule">Annulation de la

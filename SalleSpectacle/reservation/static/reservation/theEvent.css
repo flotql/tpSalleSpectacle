@@ -1,3 +1,12 @@
+:root {
+--primary-color: #504145;
+--secondary-color:white;
+--ombreBtn: indianred;
+--grosTitre: black;
+--ombreTitre: 2px 1px white;
+
+}
+
 .monEvent{
 width:fit-content;
 position:absolute;
@@ -6,12 +15,13 @@ transform: translate(-50%,50%);
 background: rgba(0,0,0, .35);
 padding:30px;
 border-radius:5px;
+box-shadow: 0 15px 20px;
 }
 
 h1 {
-color:var(--primary-color);
+color:black;
 font-family: 'Bahianita', cursive;
-text-shadow: 2px 1px black;
+text-shadow: 2px 1px white;
 font-size: 60px;
 }
 
@@ -28,7 +38,7 @@ color:whitesmoke;
 margin-top:40px;
 background: transparent;
 border:none;
-color: var(--primary-color);
+color: whitesmoke;
 text-shadow: 1px 1px black;
 font-size: 16px;
 text-decoration: none;
@@ -42,8 +52,8 @@ padding:20px;
 #event_button:hover {
 background: rgba(164, 88, 60, 0.575);
  border-radius: 5px;
-  box-shadow: 0 0 5px #fddb3a,
-              0 0 15px #fddb3a,
-              0 0 25px #fddb3a,
-              0 0 50px #fddb3a;
+  box-shadow: 0 0 5px indianred,
+              0 0 15px indianred,
+              0 0 25px indianred,
+              0 0 50px indianred;
 }
