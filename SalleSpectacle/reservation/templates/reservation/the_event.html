@@ -23,7 +23,7 @@
     Performé par:
     {% for perform in event.perform.all %}
         <li class="events">
-            <a href="{% url 'reservation:artists' perform.id %}">{{perform}}</a>
+            <p>➔<a href="{% url 'reservation:artists' perform.id %}">{{perform}}</a></p>
         </li>
     {% endfor %}
     {% if total > 0%}
