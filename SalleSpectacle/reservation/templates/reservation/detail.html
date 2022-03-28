@@ -12,6 +12,7 @@
 {% endblock %}
 <title>Detail</title>
 {% block content%}
+{% load i18n %}
 <div id="laDiv">
     <div id="petiteDiv">
         <h1>L'évenement: {{event.event_name}}</h1>
@@ -23,7 +24,9 @@
             <div class="ticket-contain">
                 <div>
                     <p class="dedans">{{event.event_name}}</p>
-                    <p class="enHaut">{{event.event_start_date}}</p>
+                    {% language 'fr' %}
+                    <p class="enHaut">{{event.event_start_date|date:'d F Y'}}</p>
+                    {% endlanguage %}
                 </div>
             </div>
         </div>
