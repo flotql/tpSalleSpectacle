@@ -18,7 +18,7 @@
 
 <ul class="event">
     {% language 'fr' %}
-    <li class="events">Date de début: {{event.event_start_date|date:'d F Y'}}</li>
+    <li class="events">Date de début: {{event.event_start_date|date:'d F Y H:i'}}</li>
     {% endlanguage %}
     Performé par:
     {% for perform in event.perform.all %}
