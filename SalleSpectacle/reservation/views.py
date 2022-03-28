@@ -95,5 +95,12 @@ def registered(request):
     context = {'user':user}
     return render(request, 'reservation/registered.html', context)
 
+def password(request):
+    return render(request, 'reservation/password.html')
 
-
+def passwordValidation(request):
+    new_pw = request.POST['password']
+    pw = User.objects.get(username=request.POST['user_name'])
+    pw.set_password(new_pw)
+    pw.save()
+    return render(request,'reservation/passwordValidation.html',)

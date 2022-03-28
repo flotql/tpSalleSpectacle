@@ -17,4 +17,6 @@ urlpatterns= [
     path ('registered/', views.registered, name='registered'),
     path ('welcome/', views.welcome, name='welcome'),
     path ('purchase/', views.ticket_purchase, name='purchase'),
+    path('password/', views.password, name='password'),
+    path('password/passwordValidation', views.passwordValidation, name='passwordValidation')
 ]
