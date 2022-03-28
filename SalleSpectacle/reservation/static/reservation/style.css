@@ -1,5 +1,10 @@
 :root {
 --primary-color: #504145;
+--secondary-color:white;
+--ombreBtn: indianred;
+--grosTitre: black;
+--ombreTitre: 2px 1px white;
+
 }
 
 body {
@@ -32,6 +37,7 @@ animation-name: slidein;
 font-family: 'Oswald', sans-serif;
 font-size: 65px;
 text-transform: uppercase;
+text-shadow:2px 1px white;
 font-weight: bold;
 margin-bottom:15px;
 }

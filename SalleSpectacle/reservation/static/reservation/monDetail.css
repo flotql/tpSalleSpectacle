@@ -25,9 +25,9 @@ border-radius: 5px;
 }
 
 #laDiv h1 {
-    color:var(--primary-color);
+    color:black;
     font-family: 'Bahianita', cursive;
-    text-shadow: 2px 1px black;
+    text-shadow: 2px 1px white;
     font-size: 60px;
 }
 
@@ -49,8 +49,9 @@ padding:20px;
 #annule:hover {
 background: rgba(164, 88, 60, 0.575);
  border-radius: 5px;
-  box-shadow: 0 0 5px #fddb3a,
-              0 0 15px #fddb3a,
-              0 0 25px #fddb3a,
-              0 0 50px #fddb3a;
+  box-shadow: 0 0 5px indianred,
+              0 0 15px indianred,
+              0 0 25px indianred,
+              0 0 50px indianred;
 }
+

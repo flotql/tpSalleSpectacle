@@ -1,21 +1,28 @@
-<!DOCTYPE html>
 {% extends "reservation/index.html" %}
 {% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="{% static 'reservation/style.css' %}">
-    <title>Profil</title>
-</head>
-<body>
+{% block css_maybe %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bahianita&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{% static 'reservation/nav.css' %}">
+<link rel="stylesheet" type="text/css" href="{%static 'reservation/style.css' %}">
+<link rel="stylesheet" type="text/css" href="{%static 'reservation/monDetail.css' %}">
+<link rel="stylesheet" type="text/css" href="{%static 'reservation/profil.css' %}">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Text&display=swap" rel="stylesheet">
+{% endblock %}
 {% block content %}
+<div class="monProfil">
+<h1>Bienvenu sur ton profil {{request.user}}</h1>
+
+<div class="monProfil1">
+    <h2>Voici la liste de tes événements:</h2>
     {% for event_list in nomEvent %}
         <ul>
             <li>
-                <a href="{% url 'reservation:detail' event_list.id %}">{{event_list.event_name}}</a>
+                <p>➔ <a href="{% url 'reservation:detail' event_list.id %}">{{event_list.event_name}}</a></p>
             </li>
         </ul>
+</div>
+</div>
     {% endfor %}
 {% endblock %}
-</body>
-</html>
