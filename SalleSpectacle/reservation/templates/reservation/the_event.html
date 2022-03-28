@@ -21,14 +21,16 @@
     <li class="events">Date de début: {{event.event_start_date}}</li>
     Performé par:
     {% for perform in event.perform.all %}
-        <li class="events">{{perform}}</li>
+        <li class="events">
+            <a href="{% url 'reservation:artists' perform.id %}">{{perform}}</a>
+        </li>
     {% endfor %}
 
     {% if total > 0%}
     <li id="place">Nombre de places restantes : {{total}}</li>
     <form  action="{% url 'reservation:purchase' event.id %}">
     {% if not request.user.is_authenticated %}
-    Connectez-vous pour prendre une place
+        <p><br>Connectez-vous pour prendre une place</p>
     {% else %}
     <input id="event_button" type="submit" value="Réserver">
     {% endif %}
