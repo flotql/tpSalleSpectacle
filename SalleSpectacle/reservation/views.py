@@ -35,6 +35,10 @@ def ticket_purchase(request, event_id):
     context = {'event':event }
     return render(request, 'reservation/purchase.html', context)
 
+def artists(request, event_id):
+    artist = get_object_or_404(WhoIsHere, pk=event_id)
+    return render(request, 'reservation/artists.html', {'artist':artist})
+
 def profil(request):
     nomEvent = []
     for list_event in Events.objects.all():
