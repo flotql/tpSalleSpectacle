@@ -11,6 +11,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Text&display=swap" rel="stylesheet">
 {% endblock %}
 {% block content %}
+<div class="container">
+    <div class="box">
 <div class="monProfil">
 <h1>Bienvenu sur ton profil {{request.user}}</h1>
 
@@ -25,6 +27,8 @@
             {% endfor %}
         </ul>
 </div>
+</div>
+    </div>
 </div>
 
 {% endblock %}

@@ -3,6 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="9da38dab-9815-4f33-ae83-c13767949aba" name="Changes" comment="update my things">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/static/reservation/profil.css" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/static/reservation/profil.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/static/reservation/theEvent.css" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/static/reservation/theEvent.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/templates/reservation/error_log.html" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/templates/reservation/error_log.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/templates/reservation/profil.html" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/templates/reservation/profil.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation/templates/reservation/registered.html" beforeDir="false" afterPath="$PROJECT_DIR$/reservation/templates/reservation/registered.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
