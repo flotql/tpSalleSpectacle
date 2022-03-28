@@ -31,7 +31,7 @@ border-radius: 5px;
     font-size: 60px;
 }
 
-button {
+#annule {
 margin-top:40px;
 background: transparent;
 border:none;
@@ -46,7 +46,7 @@ transition: .5s;
 padding:20px;
 }
 
-button:hover {
+#annule:hover {
 background: rgba(164, 88, 60, 0.575);
  border-radius: 5px;
   box-shadow: 0 0 5px #fddb3a,
