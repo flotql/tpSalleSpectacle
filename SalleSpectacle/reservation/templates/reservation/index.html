@@ -39,7 +39,7 @@
             {% load i18n %}
             {% language 'fr' %}
                 <li>
-                    <pre><a href="{% url 'reservation:the_event' event.id %}">{{event.event_start_date|date:'d F Y'}}; {{event.event_name}}</a></pre>
+                    <pre><a href="{% url 'reservation:the_event' event.id %}">{{event.event_start_date|date:'d F Y H:i'}}; {{event.event_name}}</a></pre>
             {% endlanguage %}
                 </li>
             {%endfor%}
