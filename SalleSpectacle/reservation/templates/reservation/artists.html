@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% extends "reservation/index.html" %}
+{% load static %}
+{% block css_maybe %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bahianita&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'reservation/nav.css' %}">
+    <link rel="stylesheet" type="text/css" href="{%static 'reservation/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{%static 'reservation/monForm.css' %}">
+    <link rel="stylesheet" type="text/css" href="{%static 'reservation/theEvent.css' %}">
+    {% endblock %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'reservation/style.css' %}">
+    <title>Artists</title>
+</head>
+<body>
+{% block content %}
+<div class="monEvent">
+    <h1>Les Artistes :</h1>
+
+    {% for artists_list in artist.have.all %}
+        <ul class="event">
+            <li>
+                {{artists_list.artist_name}} {{artists_list.artist_firstname}}
+            </li>
+        </ul>
+    {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,38 @@
+h1 {
+font-size:60px;
+margin-bottom:50px;
+font-family: 'Bahianita', cursive;
+color:black;
+text-shadow: 2px 1px white;
+}
+
+h2{
+font-size:15px;
+text-transform:uppercase;
+margin-bottom: 20px;
+}
+
+.monProfil {
+width:fit-content;
+position:absolute;
+left:50%;
+transform: translate(-50%,50%);
+background: rgba(0,0,0, .35);
+padding:30px;
+border-radius:5px;
+box-shadow: 0 15px 20px;
+}
+
+p a{
+margin-top: 20px;
+text-decoration:none;
+color:white;
+text-shadow: 1px 1px black;
+text-transform: uppercase;
+}
+
+p a:hover{
+zoom: 120%
+}
+
+

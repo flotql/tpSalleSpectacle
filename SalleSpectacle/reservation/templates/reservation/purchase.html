@@ -1,0 +1,18 @@
+{% extends "reservation/index.html" %}
+{% load static %}
+    {% block css_maybe %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bahianita&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'reservation/nav.css' %}">
+    <link rel="stylesheet" type="text/css" href="{%static 'reservation/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{%static 'reservation/monForm.css' %}">
+    <link rel="stylesheet" type="text/css" href="{%static 'reservation/welcome.css' %}">
+{%endblock%}
+{% block content%}
+
+<div class="welcome" ><h1>La réservation est bien prise en compte </h1></div>
+
+</body>
+{% endblock %}
+</html>

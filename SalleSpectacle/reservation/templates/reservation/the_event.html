@@ -1,22 +1,46 @@
-<!DOCTYPE html>
 {% extends "reservation/index.html" %}
 {% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>TheEvent</title>
-</head>
-<body>
-{% block content%}
+    {% block css_maybe %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bahianita&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'reservation/nav.css' %}">
+    <link rel="stylesheet" type="text/css" href="{%static 'reservation/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{%static 'reservation/monForm.css' %}">
+    <link rel="stylesheet" type="text/css" href="{%static 'reservation/theEvent.css' %}">
+    {% endblock %}
 
-<h1>L'évenement: {{event.events_name}}</h1>
+{% block content%}
+{% load i18n %}
+<div class="monEvent">
+
+    <h1>L'évenement: {{event.event_name}}</h1>
 
 <ul class="event">
-    <li id="event">Date de début: {{event.event_start_date}}</li>
-    <li id="event">Performé par: {{event.perfom}}</li>
+    {% language 'fr' %}
+    <li class="events">Date de début: {{event.event_start_date|date:'d F Y H:i'}}</li>
+    {% endlanguage %}
+    Performé par:
+    {% for perform in event.perform.all %}
+        <li class="events">
+            <p>➔<a href="{% url 'reservation:artists' perform.id %}">{{perform}}</a></p>
+        </li>
+    {% endfor %}
+    {% if total > 0%}
+    <li id="place">Nombre de places restantes : {{total}}</li>
+    <form  action="{% url 'reservation:purchase' event.id %}">
+    {% if not request.user.is_authenticated %}
+        <p><br>Connectez-vous pour prendre une place</p>
+    {% else %}
+    <input id="event_button" type="submit" value="Réserver">
+    {% endif %}
+    </form>
+    {%else%}
+    <br><li id="Complet">Complet</li>
+    {%endif%}
 </ul>
-<input type="button" value="Réserver">
 
 
-</body>
-</html>
+</div>
+{%endblock%}
+

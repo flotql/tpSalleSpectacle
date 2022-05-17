@@ -1,0 +1,71 @@
+:root {
+--primary-color: #504145;
+--secondary-color:white;
+--ombreBtn: indianred;
+--grosTitre: black;
+--ombreTitre: 2px 1px white;
+
+}
+
+.monEvent{
+width:fit-content;
+position:absolute;
+left:50%;
+transform: translate(-50%,50%);
+background: rgba(0,0,0, .35);
+padding:30px;
+border-radius:5px;
+box-shadow: 0 15px 20px;
+}
+
+h1 {
+color:black;
+font-family: 'Bahianita', cursive;
+text-shadow: 2px 1px white;
+font-size: 60px;
+}
+
+.event {
+margin-top:20px;
+}
+
+.event {
+text-transform:uppercase;
+color:whitesmoke;
+}
+
+#event_button {
+margin-top:40px;
+background: transparent;
+border:none;
+color: whitesmoke;
+text-shadow: 1px 1px black;
+font-size: 16px;
+text-decoration: none;
+text-transform: uppercase;
+letter-spacing: 4px;
+overflow: hidden;
+transition: .5s;
+padding:20px;
+}
+
+#event_button:hover {
+background: rgba(164, 88, 60, 0.575);
+ border-radius: 5px;
+  box-shadow: 0 0 5px indianred,
+              0 0 15px indianred,
+              0 0 25px indianred,
+              0 0 50px indianred;
+}
+
+p a{
+margin-top: 20px;
+text-decoration:none;
+color:#a4583c;
+text-shadow: 1px 1px black;
+text-transform: uppercase;
+}
+
+p a:hover{
+zoom: 120%
+}

@@ -1,0 +1,35 @@
+{% extends "reservation/index.html" %}
+{% load static %}
+{% block css_maybe %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bahianita&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{% static 'reservation/nav.css' %}">
+<link rel="stylesheet" type="text/css" href="{%static 'reservation/style.css' %}">
+<link rel="stylesheet" type="text/css" href="{%static 'reservation/monDetail.css' %}">
+<link rel="stylesheet" type="text/css" href="{%static 'reservation/profil.css' %}">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Text&display=swap" rel="stylesheet">
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="box">
+<div class="monProfil">
+<h1>Bienvenue sur ton profil {{request.user}}</h1>
+
+<div class="monProfil1">
+    <h2>Voici la liste de tes événements:</h2>
+
+        <ul>
+            {% for event_list in nomEvent %}
+            <li>
+                <p>➔ <a href="{% url 'reservation:detail' event_list.id %}">{{event_list.event_name}}</a></p>
+            </li>
+            {% endfor %}
+            <p>➔ <a href="{% url 'reservation:password' %}">Changer votre mot de passe ?</a></p>
+        </ul>
+</div>
+</div>
+    </div>
+</div>
+
+{% endblock %}

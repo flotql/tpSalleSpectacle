@@ -1,0 +1,57 @@
+#imgDiv {
+    width:350px;
+    margin-top:50px;
+	margin-bottom:50px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+img{
+    transform: translate(-4.5%,15%);
+    width:350px;
+}
+
+#laDiv{
+position: absolute;
+top: 5%;
+left:50%;
+width:400px;
+padding: 40px;
+transform: translate(-50%,15%);
+background: rgba(0,0,0, .5);
+box-sizing:border-box;
+box-shadow: 0 15px 20px;
+border-radius: 5px;
+}
+
+#laDiv h1 {
+    color:black;
+    font-family: 'Bahianita', cursive;
+    text-shadow: 2px 1px white;
+    font-size: 60px;
+}
+
+#annule {
+margin-top:40px;
+background: transparent;
+border:none;
+color: var(--primary-color);
+text-shadow: 1px 1px black;
+font-size: 16px;
+text-decoration: none;
+text-transform: uppercase;
+letter-spacing: 4px;
+overflow: hidden;
+transition: .5s;
+padding:20px;
+}
+
+#annule:hover {
+background: rgba(164, 88, 60, 0.575);
+ border-radius: 5px;
+  box-shadow: 0 0 5px indianred,
+              0 0 15px indianred,
+              0 0 25px indianred,
+              0 0 50px indianred;
+}
+

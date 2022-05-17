@@ -1,0 +1,46 @@
+{% extends "reservation/index.html" %}
+{% load static %}
+{% block css_maybe %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bahianita&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{% static 'reservation/nav.css' %}">
+<link rel="stylesheet" type="text/css" href="{%static 'reservation/style.css' %}">
+<link rel="stylesheet" type="text/css" href="{%static 'reservation/monDetail.css' %}">
+<link rel="stylesheet" type="text/css" href="{%static 'reservation/monTicket.css' %}">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Text&display=swap" rel="stylesheet">
+{% endblock %}
+<title>Detail</title>
+{% block content%}
+{% load i18n %}
+<div id="laDiv">
+    <div id="petiteDiv">
+        <h1>L'évenement: {{event.event_name}}</h1>
+       <div class="wrap"> <div class="monTicket">
+        <div class="ticket">
+            <div class="ticketHaut">
+                <p class="noselect">{{rnd}}{{event.id}}{{request.user.id}}</p>
+            </div>
+            <div class="ticket-contain">
+
+                <div class="ticket-p">
+
+
+                <div>
+                    <p class="dedans">{{event.event_name}}</p>
+                    {% language 'fr' %}
+                    <p class="enHaut">{{event.event_start_date|date:'d F Y H:i'}}</p>
+                    {% endlanguage %}
+
+                </div>
+            </div>
+        </div>
+       </div>
+        </div>
+        <div>
+            <a href="{% url 'reservation:cancel' event.id %}"><button id="annule">Annulation de la
+                    réservation</button></a>
+        </div>
+    </div>
+</div>
+{%endblock%}

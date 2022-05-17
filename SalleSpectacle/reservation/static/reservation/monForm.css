@@ -1,0 +1,209 @@
+:root {
+--primary-color: #504145;
+}
+
+/*—ici on gère le titre h2—*/
+h2 {
+text-transform:uppercase;
+text-shadow: 1px 1px white;
+color: black;
+letter-spacing: 2px;
+
+}
+
+
+.signIn h2 {
+margin: 0 0 20px;
+padding:0;
+text-align:center;
+}
+
+/*—ici on modifie le place holder—*/
+input::placeholder {
+color:whitesmoke;
+
+text-transform:uppercase;
+letter-spacing: 1px;
+}
+
+/*—ici on gère la position de notre bôite formulaire au sein de notre page—*/
+.signIn {
+position: absolute;
+top: 5%;
+left:50%;
+width:400px;
+padding: 40px;
+transform: translate(-50%,50%);
+background: rgba(0,0,0, .5);
+box-sizing:border-box;
+box-shadow: 0 15px 20px;
+border-radius: 5px;
+}
+
+
+
+.signIn .monInput {
+position: relative;
+}
+
+/*—ici on gère l'emplacement des inputs et leur style—*/
+.signIn .monInput input {
+width: 100%;
+padding: 10px 0;
+font-size: 14px;
+color:whitesmoke;
+margin-bottom:30px;
+border: none;
+border-bottom: 1px solid whitesmoke;
+outline:none;
+background: transparent;
+}
+
+/*—ici on gère l'emplacement des labels et leur style—*/
+.signIn .monInput label {
+position: absolute;
+top: 0;
+left: 0;
+padding: 10px 0;
+font-size:14px;
+color:whitesmoke;
+pointer-events: none;
+transition: .5s;
+}
+
+/* une animation dont on ne se sert pas
+.signIn .monInput input:focus ~ label,
+.signIn .monInput input:valid ~ label {
+  top: -5px;
+  left: 0;
+  color: #a4583c;
+  font-size: 12px;
+}
+*/
+
+/*— ici on gère l'inout et le lien*/
+.signIn form a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: var(--primary-color);
+  text-shadow: 1px 1px black;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  letter-spacing: 4px
+}
+
+/*—ici on gère le hover de l'input—*/
+.signIn a:hover {
+  background: rgba(164, 88, 60, 0.575);
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px indianred,
+              0 0 15px indianred,
+              0 0 25px indianred,
+              0 0 50px indianred;
+}
+
+/*—ici commence l'animation autour du bouton—*/
+.signIn a span {
+position: absolute;
+display: block;
+}
+
+.signIn a span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, indianred);
+  animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%,100% {
+    left: 100%;
+  }
+}
+.signIn a span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, indianred);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: .25s
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%,100% {
+    top: 100%;
+  }
+}
+
+.signIn a span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, indianred);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: .5s
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%,100% {
+    right: 100%;
+  }
+}
+
+.signIn a span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, indianred);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: .75s
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,100% {
+    bottom: 100%;
+  }
+}
+
+
+/*on gère le style du bouton*/
+.jeTeste {
+background: transparent;
+border:none;
+color: whitesmoke;
+text-shadow: 1px 1px black;
+font-size: 16px;
+text-decoration: none;
+text-transform: uppercase;
+letter-spacing: 4px;
+overflow: hidden;
+transition: .5s;
+}
+
+
+
+
+

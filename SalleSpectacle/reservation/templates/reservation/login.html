@@ -1,0 +1,29 @@
+{% extends "reservation/index.html" %}
+{% load static %}
+    {% block css_maybe %}
+    <link rel="stylesheet" type="text/css" href="{% static 'reservation/nav.css' %}">
+    <link rel="stylesheet" type="text/css" href="{%static 'reservation/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{%static 'reservation/monForm.css' %}">
+    {% endblock %}
+    {% block content%}
+<div class="signIn">
+    <form id="login" method="post" action="{% url 'reservation:welcome' %}">
+    {% csrf_token %}
+        <h2>Connexion</h2>
+            <div class="monInput">
+                <input id="user_name" name="user_name" placeholder="Nom d'utilisateur">
+                <label for="user_name"></label>
+                <input type="password" id="password" name="password" placeholder="Mot de Passe">
+                <label for="password"></label>
+            </div>
+                <a href="{% url 'reservation:password' %}">mot de passe perdu ?</a>
+                <a href="{% url 'reservation:welcome' %}"><input class="jeTeste" type="submit" value="Enregistrer">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </a>
+    </form>
+</div>
+    {% endblock %}
