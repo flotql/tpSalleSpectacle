@@ -13,5 +13,26 @@
   <li class="maNav"><a href="contact.asp">Contact</a></li>
   <li class="maNav"><a href="about.asp">About</a></li>
 </ul>
+<<<<<<< Updated upstream
+=======
+
+{% block content %}
+
+    {%if event_list%}
+        <ul>
+            {% for event in event_list %}
+                <li>
+                    <a href="{% url 'reservation:the_event' event.id %}">{{events.event_name}}</a>
+
+                </li>
+            {%endfor%}
+        </ul>
+    {%else%}
+        <p>Pas d'évenement à venir !</p>
+    {%endif%}
+
+{% endblock %}
+
+>>>>>>> Stashed changes
 </body>
 </html>
